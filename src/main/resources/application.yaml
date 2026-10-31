@@ -11,3 +11,6 @@ spring:
 
     spring.jpa.hibernate.ddl-auto: none
     spring.jpa.show-sql: true
+redis:
+  url: ${UPSTASH_REDIS_REST_URL}
+  token: ${UPSTASH_REDIS_REST_TOKEN}
