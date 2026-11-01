@@ -17,16 +17,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
+
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "full_name")
+    @Column(name = "full_name", nullable = false)
     private String fullName;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Column(name = "created_at")
@@ -34,4 +37,10 @@ public class User {
 
     @Column(name = "updated_at")
     private Instant updatedAt;
+
+    @Column(name = "enabled")
+    private Boolean enabled = true;
+
+    @Column(name = "role_id")
+    private Long roleId;
 }
